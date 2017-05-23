@@ -1,0 +1,47 @@
+<!– Booking html file -->
+<!- The booking form for users to provide information for a taxi pickup -->
+<!- Alexander Glenn, ID:15896259 -->
+<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+  <head> 
+    <title>CabsOnline booking form</title> 
+	<script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="booking.js"> </script>
+  </head> 
+  <body>
+  <H1>CabsOnline booking form</H1>
+	<form>
+		<p>
+		<H2>Personal Details </H2>
+	    <label>Name*:  <input type="text" name="cust_name"> </label><br>
+ 	    <label>Phone Number*: <input type="text" name="phone"> </label><br></p>
+		<p>
+		<H2>Address Details </H2>
+		<label>Unit number: <input type="text" name="unit" </label><br>
+		<label>Street number*: <input type="text" name="street_num" </label><br>
+		<label>Street name*: <input type="text" name="street_name" </label><br>
+		<label>Suburb*: <input type="text" name="suburbfield" </label><br></p>
+		<p>
+		<H2>Destination Details </H2>
+		<label>Destination suburb*: <input type="text" name="destination_suburb" </label><br></p>
+		<label>Pick up time/date*: <input type="date" name="pickup_date" </label><br><br></p>
+		
+		<H6>* Required fields</H6>
+		
+	    <input name="submit" type = "button" onClick = "getInfo('bookingprocess.php', 
+																'div_00', 
+																cust_name.value, 
+																phone.value,
+																unit.value, 
+																street_num.value, 
+																street_name.value, 
+																suburbfield.value, 
+																destination_suburb.value, 
+																pickup_date.value)" value = "Request a Pickup">
+		<input type="reset" value="Reset">
+		
+	</form>
+	<div id="div_00"> 
+	    <p>The fetched information will go here.</p>  
+	</div> 
+ </body> 
+</HTML>
