@@ -1,0 +1,94 @@
+/* Alexander Glenn, ID:15896259 */
+/* External CSS for all .html files in assignment 2 */ 
+
+body {
+    background-color: white;
+    border: 5px solid black;
+
+}
+
+h1 {
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    font-family: verdana;
+    font-size: 250%;
+    border-bottom-color: Black;
+
+}
+
+h2 {
+    margin: 0 0 5mm 2%;
+    color: black;
+    text-align: left;
+    font-family: verdana;
+}
+
+h4 {    
+    margin: 0 0 2% 38%;
+    color: blue;
+    text-align: left;
+    font-family: verdana;
+    font-size: 150%;
+    font-weight: bold;
+
+}
+
+h6 {
+    margin: 0 0 5mm 5%;
+    color: red;
+    text-indent: 0%;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+p {
+    margin: 0 5% 5mm 5%;
+    color: black;
+    text-align: left;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+
+p.home {
+    margin: 0 0 2% 0%;
+    color: blue;
+    text-align: center;
+    font-family: verdana;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+p.pageback {
+    margin: 0 0 2% 0%;
+    color: blue;
+    text-align: center;
+    font-family: verdana;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+td {
+    margin: 0 5% 5mm 5%;
+    color: black;
+    text-align: center;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+th {
+    margin: 0 5% 5mm 5%;
+    color: black;
+    text-align: center;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+tr {
+    margin: 0 5% 5mm 5%;
+    color: black;
+    text-align: center;
+    font-family: verdana;
+    font-size: 100%;
+}

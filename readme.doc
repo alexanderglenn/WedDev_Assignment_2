@@ -1,6 +1,43 @@
-// Readme file for assignment 2
+Readme file for Web Development assignment 2; Cabs Online System
+Alexander Glenn, ID:15896259
 
 Files contained:
+- admin.html
+- assigntaxi.php
+- booking.html
+- booking.js
+- bookingprocess.php
+- db_creation_MySQL_commands.txt
+- readme.doc (this file)
+- showunassignedtaxi.php
+- style.css
+- unique_num.txt
+- xhr.js
 
 
 Instructions on how to use CabsOnline taxi service:
+- A user can use the system to book a taxi using booking.html
+	- Enter you personal details and pickup time, date and address
+	- The system will generate a booking reference number for the 	booking entered
+	- The system provides a confirmation message in the html file to 	the user that the booking has been made
+
+- An admin user can see the unassigned bookings using admin.html
+	- The admin clicks the 'Show pick-up request' button
+	- This shows all the bookings that have not been assigned yet
+
+- An admin user can see the unassigned bookings using admin.html
+	- The admin enters a booking reference number into the text field
+	- Then click the 'assign a taxi' button
+	- This assigns a taxi to the booking reference number
+	- A confirmation is displaying under the buttons on admin.html
+	- A message will also be displayed if the booking reference number 	entered does not exist
+
+Known Bugs / Missing features
+	- There is a field for the user to input their time of pickup but 	the server side processing does not receive using the $_POST 	method. To show the rest of the backend working, the 'pick up time' 	is set to the current time.
+	- No date validation has been added. Dates in the past can be 	booked into the system.
+
+
+
+
+
+

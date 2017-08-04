@@ -1,47 +1,66 @@
-<!– Booking html file -->
-<!- The booking form for users to provide information for a taxi pickup -->
-<!- Alexander Glenn, ID:15896259 -->
-<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+<!DOCTYPE html>
+<!-- Alexander Glenn, ID:15896259 -->
+<!-- The booking form for users to provide information for a taxi pickup -->
+<!-- Users will require their name, phone number, street number, street name, suburb, destination suburb and pick up date and time -->
+<html> 
   <head> 
     <title>CabsOnline booking form</title> 
 	<script type="text/javascript" src="xhr.js"></script>
     <script type="text/javascript" src="booking.js"> </script>
+	<link rel="stylesheet" href="style.css">
   </head> 
   <body>
+   
   <H1>CabsOnline booking form</H1>
-	<form>
-		<p>
+	<form name=bookingform >
+	
+		<!-- The form is broken down into sections to try and group the appropriate fields together -->
 		<H2>Personal Details </H2>
-	    <label>Name*:  <input type="text" name="cust_name"> </label><br>
- 	    <label>Phone Number*: <input type="text" name="phone"> </label><br></p>
-		<p>
+		<p>Name*:  <input id="name" type="text" name="cust_name" required placeholder="E.G: Greg Thompson"> </p>
+ 	    <p>Phone Number*: <input type="tel" name="phone" required placeholder="E.G: 0271122334"> </p>
+		
 		<H2>Address Details </H2>
-		<label>Unit number: <input type="text" name="unit" </label><br>
-		<label>Street number*: <input type="text" name="street_num" </label><br>
-		<label>Street name*: <input type="text" name="street_name" </label><br>
-		<label>Suburb*: <input type="text" name="suburbfield" </label><br></p>
-		<p>
+		<p>Unit number: <input type="text" name="unit"> </p>
+		<p>Street number*: <input type="number" name="street_num" required> </p>
+		<p>Street name*: <input type="text" name="street_name" required placeholder="E.G: Second Street"> </p>
+		<p>Suburb*: <input type="text" name="suburbfield" required placeholder="Your suburb here"> </p>
+		
 		<H2>Destination Details </H2>
-		<label>Destination suburb*: <input type="text" name="destination_suburb" </label><br></p>
-		<label>Pick up time/date*: <input type="date" name="pickup_date" </label><br><br></p>
+		<p>Destination suburb*: <input type="text" name="destination_suburb" required placeholder="Your destination suburb here"> </p>
+		
+		<H2>Pick date and time</H2>
+		<p>Pick up date (yyyy-mm-dd)*: <input type="date" id="dt" name="pickup_date" size="12"> </p>
+		<p>Pick up time (24-hr-time)*: <input type="time" id="ft" name="pickup_time" size="6"> </p>
 		
 		<H6>* Required fields</H6>
+		<H6>Pickup date and time must be after the current time (Use the format the time picker uses if it is provided) </H6>
+		<H6>The date needs to be in the format yyyy-mm-dd for browsers other than Google Chrome. If using Chrome, use the date picker as usual</H6>
 		
-	    <input name="submit" type = "button" onClick = "getInfo('bookingprocess.php', 
-																'div_00', 
-																cust_name.value, 
-																phone.value,
-																unit.value, 
-																street_num.value, 
-																street_name.value, 
-																suburbfield.value, 
-																destination_suburb.value, 
-																pickup_date.value)" value = "Request a Pickup">
-		<input type="reset" value="Reset">
+		<p>
+			<input name="submit" type = "button" onClick = "validateBookingForm()" value = "Request a Pickup">
+			<input type="reset" value="Reset">
+		</p>
+		
+		<script>
+			// Sets the current time and date, this is then displayed in the browser for the user to see
+			var d = new Date();
+			var hour = d.getHours();
+			var minute = d.getMinutes()
+			var day = d.getDay();
+			var month = d.getMonth();
+			var year = d.getFullYear();
+			
+			var minutes = ('0'+d.getMinutes()).slice(-2);	// Adds leading '0' if minutes is less than '10'
+			
+			//minutes = checkTime(minutes);	// Adds leading zero if less than 10
+			
+			document.getElementById('dt').value = year + '-' + month + '-' + day;
+			document.getElementById('ft').value = hour + ':' + minutes;
+		</script>
 		
 	</form>
 	<div id="div_00"> 
-	    <p>The fetched information will go here.</p>  
+	      
 	</div> 
  </body> 
 </HTML>

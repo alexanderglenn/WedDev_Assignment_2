@@ -1,0 +1,36 @@
+// My SQL commands to create database
+
+<?php
+
+// Get user, database and password settings
+require_once ("/home/tsh9748/public_html/conf/settings.php"); //please make sure the path is correct
+
+// Connect to the database
+$conn = @mysqli_connect($server, $username, $pswd, $dbnm);
+
+// SQL statement for table creation
+$cab_db = "CREATE TABLE cabsOnline (
+		booking_ref INT,
+		name VARCHAR(30),
+		streetname VARCHAR(30),
+		suburb(40),
+		phone INT,
+		streetnum INT,
+		des_suburb VARCHAR(40),
+		pickup_date DATE,
+		status VARCHAR(20),
+		pickup_time TIME,
+		booking_date DATE,
+		booking_time TIME)";
+
+// Creat the table		
+if ($create_db = mysqli_query($conn, $cab_db) === TRUE){
+	echo "<p>Table created successfully </p>";	
+}
+else {
+	echo "<p>Table not created, somthing went wron </p>";
+}
+
+
+
+?>

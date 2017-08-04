@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<!-- Alexander Glenn, ID:15896259 -->
+<!-- The admin form which allows taxi company employees can see the bookings with assigned taxis -->
+<!-- Also allows them to assign a specific taxi to a booking if needed -->
 <html>
+	<head> 
+		<title>CabsOnline Admin form</title> 
+		<script type="text/javascript" src="xhr.js"></script>
+		<script type="text/javascript" src="booking.js"> </script>
+		<link rel="stylesheet" href="style.css">
 
+  </head> 
+  <body>
+		<H1>CabsOnline adminstrator form</H1>
+		<form name=adminform>
+		<p>
+			<input type="button" onclick="showUnassignedBookings('showunassignedtaxi.php', 'div_01')" value="Show pick-up requests">
+		</p>
+		<br>
+		<br>
+		<p>
+			<input type="text" name="specificBookingNum" placeholder="Enter the booking reference here">
+			<input name="submit" type="button" onclick="assignTaxiToBooking('assigntaxi.php', 'div_01')" value="Assign a taxi">
+		</p>
+		
+		</form>
+		
+	<div id="div_01"> 
+	    
+	</div>		
+  </body>
 </html>
